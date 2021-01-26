@@ -1,0 +1,25 @@
+.chara_template {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+li {
+  list-style-type: none
+}
+
+.character {
+  width: 200px;
+  height: 300px;
+  border: 2px solid #fff;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.character p {
+  font-family: 'robotoregular', Helvetica, serif;
+  font-size: 80%;
+}
+
+

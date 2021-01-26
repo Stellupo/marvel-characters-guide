@@ -45,7 +45,7 @@
 html,body {
   background-image: url("assets/images/marvel-comics.jpg");
   color: white;
-  font-family: 'true_crimesregular', Montserrat, serif;
+  font-family: 'roboto_condensedbold', Helvetica, serif;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -67,6 +67,8 @@ html,body {
   background-color: rgb(32,32,32);
   height: 100%;
   width: 70%;
+  margin: auto;
+  padding: 20px;
 }
 
 header {
@@ -92,7 +94,6 @@ header {
 }
 
 h1{
-  font-family: 'roboto_condensedbold', Helvetica, serif;
   text-align: center;
   text-transform: uppercase;
   margin: 0;
