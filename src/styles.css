@@ -1,1 +1,103 @@
-/* You can add global styles to this file, and also import other style files */
+/* Custom fonts */
+
+@font-face {
+  font-family: 'true_crimesregular';
+  src: url('assets/web-font/true-crimes-webfont.eot');
+  src: url('assets/web-font/true-crimes-webfont.eot') format('embedded-opentype'),
+  url('assets/web-font/true-crimes-webfont.woff') format('woff'),
+  url('assets/web-font/true-crimes-webfont.ttf') format('truetype'),
+  url('assets/web-font/true-crimes-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'roboto_condensedbold';
+  src: url('assets/web-font/robotocondensed-bold-webfont.eot');
+  src: url('assets/web-font/robotocondensed-bold-webfont.eot') format('embedded-opentype'),
+  url('assets/web-font/robotocondensed-bold-webfont.woff') format('woff'),
+  url('assets/web-font/robotocondensed-bold-webfont.ttf') format('truetype'),
+  url('assets/web-font/robotocondensed-bold-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'robotoregular';
+  src: url('assets/web-font/roboto-regular-webfont.eot');
+  src: url('assets/web-font/roboto-regular-webfont.eot') format('embedded-opentype'),
+  url('assets/web-font/roboto-regular-webfont.woff') format('woff'),
+  url('assets/web-font/roboto-regular-webfont.ttf') format('truetype'),
+  url('assets/web-font/roboto-regular-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/* Overall page */
+* {
+  box-sizing: border-box;
+}
+
+
+html,body {
+  background-image: url("assets/images/marvel-comics.jpg");
+  color: white;
+  font-family: 'true_crimesregular', Montserrat, serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#main_container {
+  background-color: rgba(32,32,32,0.8);
+  height: 100%;
+  width: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  background-color: rgb(32,32,32);
+  height: 100%;
+  width: 70%;
+}
+
+header {
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.nav{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: #fff solid 1px;
+}
+
+.nav img{
+  height: 50%;
+  margin: 10px;
+}
+
+h1{
+  font-family: 'roboto_condensedbold', Helvetica, serif;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 180%;
+}
+
