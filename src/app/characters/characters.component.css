@@ -8,6 +8,11 @@ li {
   list-style-type: none;
 }
 
+.chara_template a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .character {
   width: 200px;
   height: 300px;

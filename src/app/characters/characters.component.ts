@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CharacterService} from '../services/character.service';
 import {Character} from '../character';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-characters',
@@ -9,25 +10,30 @@ import {Character} from '../character';
 })
 export class CharactersComponent implements OnInit {
 
-  constructor(private characterService: CharacterService) { }
+  constructor(private characterService: CharacterService,
+              private router: Router) { }
 
   characters: Character[];
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getCharacters();
   }
 
-  getHeroes(): void {
+  getCharacters(): void {
     this.characterService.getCharacters()
       .subscribe(characters => this.characters = characters);
   }
 
-  onOver(character: Character) {
+  onOver(character: Character): void {
     this.characterService.overCharacter(character);
   }
 
-  onOut(character: Character) {
+  onOut(character: Character): void {
     this.characterService.outCharacter(character);
+  }
+
+  OnViewCharacter(id: number): void {
+    this.router.navigate(['/characters', id]);
   }
 
 }

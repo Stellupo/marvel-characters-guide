@@ -1,1 +1,4 @@
-<p>character-detail works!</p>
+<div *ngIf="character">
+  <h2>{{character.name | uppercase}} details :</h2>
+  <div><span>id: </span>{{character.id}}</div>
+</div>

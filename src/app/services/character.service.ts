@@ -22,6 +22,15 @@ export class CharacterService {
       );
   }
 
+  /** GET character by id. Will 404 if id not found */
+  getCharacter(id: number): Observable<Character> {
+    const url = 'api/characters' + `/${id}`;
+    return this.http.get<Character>(url).pipe(
+      tap(_ => console.log(`fetched character id=${id}`)),
+      catchError(this.handleError<Character>(`getCharacter id=${id}`))
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error); // log to console instead
