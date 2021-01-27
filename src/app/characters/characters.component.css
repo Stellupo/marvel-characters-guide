@@ -1,25 +1,50 @@
 .chara_template {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 li {
-  list-style-type: none
+  list-style-type: none;
 }
 
 .character {
   width: 200px;
   height: 300px;
   border: 2px solid #fff;
+  margin: 20px;
+}
+
+.txt_wrapper {
+  height: 100%;
   overflow: hidden;
-  padding: 10px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(32,32,32,0.8);
+}
+
+.character:hover {
+  cursor: pointer;
 }
 
 .character p {
+  height: 30%;
   font-family: 'robotoregular', Helvetica, serif;
   font-size: 80%;
+  background:-webkit-linear-gradient(top, white, rgb(32,32,32));
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  padding: 0 10px ;
 }
+
+.character h2 {
+  padding: 10px;
+  margin: 2px;
+}
+
+
+
 
 

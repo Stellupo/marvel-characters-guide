@@ -4,4 +4,5 @@ export class Character{
   story: string;
   abilities: string[];
   group?: string;
+  img: string;
 }

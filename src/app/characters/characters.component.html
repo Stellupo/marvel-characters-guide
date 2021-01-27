@@ -1,9 +1,15 @@
 <h2>Marvel Characters</h2>
 <div class="chara_template_container">
   <ul class="chara_template">
-    <li *ngFor="let character of characters" class="character">
-      <h2>{{character.name}}</h2>
-      <p>{{character.story}}</p>
+    <li *ngFor="let character of characters"
+        class="character"
+        [ngStyle]="{background: 'url(' + character.img + ')'}"
+        (mouseover)="onOver(character)"
+        (mouseout)="onOut(character)">
+      <div class="txt_wrapper">
+        <h2>{{character.name}}</h2>
+        <p>{{character.story}}</p>
+      </div>
     </li>
   </ul>
 </div>

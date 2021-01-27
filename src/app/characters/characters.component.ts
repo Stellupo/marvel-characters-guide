@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CharacterService} from '../services/character.service';
 import {Character} from '../character';
 
@@ -20,6 +20,14 @@ export class CharactersComponent implements OnInit {
   getHeroes(): void {
     this.characterService.getCharacters()
       .subscribe(characters => this.characters = characters);
+  }
+
+  onOver(character: Character) {
+    this.characterService.overCharacter(character);
+  }
+
+  onOut(character: Character) {
+    this.characterService.outCharacter(character);
   }
 
 }
