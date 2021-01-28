@@ -5,4 +5,5 @@ export class Character{
   abilities: string[];
   group?: string;
   img: string;
+  header: string;
 }

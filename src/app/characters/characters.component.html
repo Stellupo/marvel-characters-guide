@@ -1,4 +1,9 @@
-<h2>Marvel Characters</h2>
+<div class="chara_header">
+  <div class="title_wrapper">
+      <h2>Marvel Characters</h2>
+      <h3>Discover the special abilities of your favorite heroes & villains</h3>
+  </div>
+</div>
 <div class="chara_template_container">
   <ul class="chara_template">
     <li *ngFor="let character of characters"
@@ -8,7 +13,7 @@
         (mouseout)="onOut(character)">
       <a routerLink="characters/{{character.id}}">
       <div class="txt_wrapper">
-        <h2>{{character.name}}</h2>
+        <h3>{{character.name}}</h3>
         <p>{{character.story}}</p>
       </div>
       </a>

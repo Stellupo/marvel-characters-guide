@@ -1,4 +1,8 @@
-<div *ngIf="character">
-  <h2>{{character.name | uppercase}} details :</h2>
+<div *ngIf="character" class="details_wrapper">
+  <div class="chara_details_header">
+    <div class="img_wrapper"
+         [ngStyle]="{background: 'url(' + character.header + ')'}"></div>
+    <h2>{{character.name | uppercase}} details :</h2>
+  </div>
   <div><span>id: </span>{{character.id}}</div>
 </div>
