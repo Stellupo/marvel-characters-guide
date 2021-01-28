@@ -9,6 +9,7 @@ import {CharacterService} from './services/character.service';
 import {InMemoryDataService} from './services/in-memory-data.service';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {RouterModule, Routes} from '@angular/router';
+import { HeaderComponent } from './header/header.component';
 
 
 const appRoutes: Routes = [
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CharactersComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

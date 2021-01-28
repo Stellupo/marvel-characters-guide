@@ -1,8 +1,23 @@
 <div *ngIf="character" class="details_wrapper">
   <div class="chara_details_header">
-    <div class="img_wrapper"
-         [ngStyle]="{background: 'url(' + character.header + ')'}"></div>
-    <h2>{{character.name | uppercase}} details :</h2>
+    <div class="chara_header_img">
+      <img [src]= character.header>
+    </div>
+    <div class="chara_header_text">
+      <h2>{{character.name | uppercase}}</h2>
+      <p>{{character.story}}</p>
+    </div>
   </div>
-  <div><span>id: </span>{{character.id}}</div>
+  <div class="details_container">
+    <div class="abilities_wrapper">
+      <h3> Abilities/power </h3>
+      <ul>
+        <li *ngFor="let ability of character.abilities"> {{ability}}</li>
+      </ul>
+    </div>
+    <div class="group_wrapper">
+      <h3> Group </h3>
+      <span> {{character.group}} </span>
+    </div>
+  </div>
 </div>

@@ -11,7 +11,7 @@ export const CHARACTERS: Character[] = [
     header: 'assets/images/wolwerine_header.png'
   },
   { id: 2,
-    name: 'IRON MAN (Tony Stark)',
+    name: 'IRON MAN',
     story: 'Having created a wondrous suit of armor to keep himself alive, Tony has revised it dozens of times, each version with increased capabilities, faster operation, reduced energy usage, and adaptability to the greatest threats the universe has to offer.',
     abilities: ['360 vision', 'Energy blast', 'Powerful Armor'],
     group: 'Avengers',

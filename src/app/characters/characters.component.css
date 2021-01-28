@@ -5,7 +5,7 @@
 }
 
 .title_wrapper {
-  background-color: rgba(32,32,32,0.6);
+  background-color: rgba(32,32,32,0.4);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -44,6 +44,8 @@ li {
   height: 300px;
   border: 2px solid #fff;
   margin: 20px;
+  z-index: 1;
+  position: relative;
 }
 
 .txt_wrapper {
@@ -55,8 +57,26 @@ li {
   background-color: rgba(32,32,32,0.8);
 }
 
+.character::after {
+  content: "";
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: #fff;
+  border-style: solid;
+  border-top-color: transparent;
+  border-width: 12px 12px 0 0;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  top: auto;
+  z-index: 40;
+  box-sizing: border-box;
+}
+
+
 .character:hover {
   cursor: pointer;
+  bottom: .5em;
 }
 
 .character p {
