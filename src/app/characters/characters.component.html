@@ -11,7 +11,7 @@
         [ngStyle]="{background: 'url(' + character.img + ')'}"
         (mouseover)="onOver(character)"
         (mouseout)="onOut(character)">
-      <a routerLink="characters/{{character.id}}">
+      <a routerLink="/characters/{{character.id}}">
       <div class="txt_wrapper">
         <h3>{{character.name}}</h3>
         <p>{{character.story}}</p>

@@ -1,6 +1,14 @@
 <header>
-  <nav class="nav">
-    <img src="../assets/images/marvel-logo.png" alt="marvel-logo">
+  <div class="logo">
+    <a routerLink=""><img src="/assets/images/marvel-logo.png" alt="marvel-logo"></a>
     <h1> {{title}} </h1>
+  </div>
+  <nav class="nav">
+    <a [routerLinkActive]="'active'" routerLink="/characters">
+      <span>CHARACTERS</span>
+    </a>
+    <a [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }" routerLink="">
+      <span>GROUP</span>
+    </a>
   </nav>
 </header>

@@ -1,3 +1,4 @@
+/*Header of the characters page*/
 .chara_header {
   width: 100%;
   height: 350px;
@@ -24,6 +25,7 @@
   letter-spacing: 1px;
 }
 
+/*List of the characters cards*/
 .chara_template {
   display: flex;
   flex-direction: row;
@@ -39,15 +41,6 @@ li {
   color: #fff;
 }
 
-.character {
-  width: 200px;
-  height: 300px;
-  border: 2px solid #fff;
-  margin: 20px;
-  z-index: 1;
-  position: relative;
-}
-
 .txt_wrapper {
   height: 100%;
   overflow: hidden;
@@ -57,6 +50,16 @@ li {
   background-color: rgba(32,32,32,0.8);
 }
 
+.character {
+  width: 200px;
+  height: 300px;
+  border: 2px solid #fff;
+  margin: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+/*white rectangle at the left bottom corner of the card*/
 .character::after {
   content: "";
   border-bottom-color: transparent;
@@ -72,7 +75,6 @@ li {
   z-index: 40;
   box-sizing: border-box;
 }
-
 
 .character:hover {
   cursor: pointer;

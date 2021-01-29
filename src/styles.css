@@ -50,7 +50,7 @@ html,body {
 }
 
 #main_container {
-  background-color: rgba(32,32,32,0.5);
+  background-color: rgba(32,32,32,0.8);
   min-height: 100%;
 }
 
@@ -59,20 +59,16 @@ html,body {
   width: 80%;
   min-height: 100%;
   margin: auto;
-  padding: 1px 0;
+  padding-top: 2px 0px;
 }
 
 
-h1{
-  text-align: center;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  font-size: 30px;
-  border-bottom: #fff solid 1px;
-  font-family: 'true_crimesregular', Helvetica, serif;
+.nav {
+  position: absolute;
+  top: 92px;
+  left: 200px;
 }
+
 
 .title_wrapper h2 {
   text-transform: uppercase;
@@ -80,3 +76,4 @@ h1{
   font-size: 80px;
   letter-spacing: 5px;
 }
+
