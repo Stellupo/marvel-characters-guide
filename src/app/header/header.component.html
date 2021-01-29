@@ -4,11 +4,11 @@
     <h1> {{title}} </h1>
   </div>
   <nav class="nav">
-    <a [routerLinkActive]="'active'" routerLink="/characters">
+    <a routerLinkActive='active' routerLink="/characters">
       <span>CHARACTERS</span>
     </a>
-    <a [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }" routerLink="">
-      <span>GROUP</span>
+    <a routerLinkActive='active' routerLink="/groups">
+      <span>GROUPS</span>
     </a>
   </nav>
 </header>

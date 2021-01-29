@@ -10,14 +10,16 @@
   </div>
   <div class="details_container">
     <div class="abilities_wrapper">
-      <h3> Abilities/power </h3>
+      <h3> Abilities </h3>
       <ul>
         <li *ngFor="let ability of character.abilities"> {{ability}}</li>
       </ul>
     </div>
-    <div class="group_wrapper">
-      <h3> Group </h3>
-      <span> {{character.group}} </span>
+    <div class="group_wrapper" *ngIf="character.group">
+      <h3> Groups </h3>
+      <ul>
+        <li *ngFor="let group of character.group"> {{group}}</li>
+      </ul>
     </div>
   </div>
 </div>

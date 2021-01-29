@@ -17,6 +17,7 @@ import { GroupsComponent } from './groups/groups.component';
 const appRoutes: Routes = [
   { path: 'characters', component: CharactersComponent },
   { path: 'characters/:id', component: CharacterDetailComponent },
+  { path: 'groups', component: GroupsComponent},
   { path: '', component: CharactersComponent },
   { path: '**', component: CharactersComponent }
 ];

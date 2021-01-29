@@ -1,29 +1,12 @@
 /*Header of the characters page*/
-.chara_header {
-  width: 100%;
-  height: 350px;
+.page_header {
   background: url("../../assets/images/characters.jpg") bottom;
-}
-
-.title_wrapper {
-  background-color: rgba(32,32,32,0.4);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .title_wrapper h2 {
   margin : 0;
 }
 
-.title_wrapper h3{
-  font-family: 'robotoregular', Helvetica, serif;
-  text-align: center;
-  margin : -10px 0;
-  color: darkgray;
-  letter-spacing: 1px;
-}
 
 /*List of the characters cards*/
 .chara_template {

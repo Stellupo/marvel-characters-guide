@@ -1,0 +1,15 @@
+/*Header of the groups page*/
+.page_header {
+  background: url("../../assets/images/group_header.jpg") bottom;
+}
+
+.title_wrapper h2 {
+  margin : 0;
+}
+
+/*List of the group cards*/
+.group_template {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
