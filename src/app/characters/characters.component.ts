@@ -25,11 +25,11 @@ export class CharactersComponent implements OnInit {
   }
 
   onOver(character: Character): void {
-    this.characterService.overCharacter(character);
+    this.characterService.Mouseover(character);
   }
 
   onOut(character: Character): void {
-    this.characterService.outCharacter(character);
+    this.characterService.Mouseout(character);
   }
 
   OnViewCharacter(id: number): void {

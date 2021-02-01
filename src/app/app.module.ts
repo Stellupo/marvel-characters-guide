@@ -12,12 +12,15 @@ import {RouterModule, Routes} from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GroupsComponent } from './groups/groups.component';
+import {GroupService} from './services/group.service';
+import { GroupDetailComponent } from './group-detail/group-detail.component';
 
 
 const appRoutes: Routes = [
   { path: 'characters', component: CharactersComponent },
   { path: 'characters/:id', component: CharacterDetailComponent },
   { path: 'groups', component: GroupsComponent},
+  { path: 'groups/:id', component: GroupDetailComponent },
   { path: '', component: CharactersComponent },
   { path: '**', component: CharactersComponent }
 ];
@@ -30,7 +33,8 @@ const appRoutes: Routes = [
     CharacterDetailComponent,
     HeaderComponent,
     FooterComponent,
-    GroupsComponent
+    GroupsComponent,
+    GroupDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,7 @@ const appRoutes: Routes = [
   ],
   providers: [
     CharacterService,
+    GroupService,
     InMemoryDataService,
   ],
   bootstrap: [AppComponent]

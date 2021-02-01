@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import {CHARACTERS} from '../mock-characters';
+import {GROUPS} from '../mock-groups';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,8 @@ import {CHARACTERS} from '../mock-characters';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const characters = CHARACTERS;
-    return { characters };
+    const groups = GROUPS;
+
+    return { characters, groups };
   }
 }

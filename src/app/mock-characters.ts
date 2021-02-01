@@ -6,9 +6,9 @@ export const CHARACTERS: Character[] = [
     name: 'WOLVERINE',
     story: 'From the northern wilderness of Canada hails one of the gruffest, most irascible, totally cynical and brooding member of the X-Men ever to grace the team with his presence.',
     abilities: ['Indestructible claws', 'Healing powers', 'Enhanced senses'],
-    group: ['X-men'],
-    img: 'assets/images/wolwerine.jpg',
-    header: 'assets/images/wolwerine_header.png'
+    group: ['X-MEN'],
+    img: 'assets/images/wolverine.jpg',
+    header: 'assets/images/wolverine_header.png'
   },
   { id: 2,
     name: 'IRON MAN',

@@ -3,6 +3,7 @@ import {Character} from '../character';
 import {Observable, of} from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
+import {Group} from '../groups';
 
 
 @Injectable({
@@ -17,7 +18,7 @@ export class CharacterService {
   getCharacters(): Observable<Character[]> {
     return this.http.get<Character[]>('api/characters')
       .pipe(
-        tap(_ => console.log('appel ok')),
+        tap(_ => console.log('characters ok')),
         catchError(this.handleError<Character[]>('getCharacters', [])),
       );
   }
@@ -40,27 +41,31 @@ export class CharacterService {
     };
   }
 
-  overCharacter(character: Character) {
+  /** changing appearance of the character cards when the mouse is over them */
+  Mouseover(card: Character | Group): void {
     const divs = document.body.getElementsByClassName('txt_wrapper') as HTMLCollectionOf<HTMLElement>;
-    const i = Number(character.id) - 1;
+    const i = Number(card.id) - 1;
 
     const title = divs[i].firstElementChild as HTMLElement;
     title.style.display = 'none';
 
     const intro = divs[i].lastElementChild as HTMLElement;
     intro.style.display = 'none';
+
     divs[i].style.backgroundColor = 'rgba(32,32,32,0.2)';
   }
 
-  outCharacter(character: Character) {
+  /** changing appearance of the character cards when the mouse is out */
+  Mouseout(card: Character | Group): void {
     const divs = document.body.getElementsByClassName('txt_wrapper') as HTMLCollectionOf<HTMLElement>;
-    const i = Number(character.id) - 1;
+    const i = Number(card.id) - 1;
 
     const title = divs[i].firstElementChild as HTMLElement;
     title.style.display = '';
 
     const intro = divs[i].lastElementChild as HTMLElement;
     intro.style.display = '';
+
     divs[i].style.backgroundColor = 'rgba(32,32,32,0.8)';
   }
 

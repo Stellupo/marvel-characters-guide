@@ -62,8 +62,8 @@ html,body {
   padding-top: 2px 0px;
 }
 
-
-.nav {
+/*Nav bar*/
+.nav { /*todo faire en sorte que la barre reste au même endroit même quand on réduit l'écran car actuellement absolute selon la page entière*/
   position: absolute;
   top: 92px;
   left: 200px;
@@ -77,7 +77,7 @@ html,body {
   letter-spacing: 5px;
 }
 
-/*Header of the characters page*/
+/*Header of the pages*/
 .page_header {
   width: 100%;
   height: 350px;
@@ -98,5 +98,91 @@ html,body {
   color: darkgray;
   letter-spacing: 1px;
 }
+
+/* Style of the cards template */
+/*Header of the characters page*/
+
+.title_wrapper h2 {
+  margin : 0;
+}
+
+
+/*List of the characters cards*/
+.card_template {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card_template li {
+  list-style-type: none;
+}
+
+.card a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card .txt_wrapper {
+  height: 100%;
+  overflow: hidden;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(32,32,32,0.8);
+}
+
+.card {
+  width: 200px;
+  height: 300px;
+  border: 2px solid #fff;
+  margin: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+/* White rectangle at the left bottom corner of the card */
+.card::after {
+  content: "";
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: #fff;
+  border-style: solid;
+  border-top-color: transparent;
+  border-width: 12px 12px 0 0;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  top: auto;
+  z-index: 40;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  cursor: pointer;
+  bottom: .5em;
+}
+
+.card p {
+  height: 30%;
+  font-family: 'robotoregular', Helvetica, serif;
+  font-size: 80%;
+  background:-webkit-linear-gradient(top, white, rgb(32,32,32));
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  padding: 0 10px ;
+}
+
+.card h3 {
+  padding: 10px;
+  margin: 2px;
+}
+
+
+
+
+
+
 
 
