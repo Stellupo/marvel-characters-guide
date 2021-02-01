@@ -21,8 +21,8 @@ const appRoutes: Routes = [
   { path: 'characters/:id', component: CharacterDetailComponent },
   { path: 'groups', component: GroupsComponent},
   { path: 'groups/:id', component: GroupDetailComponent },
-  { path: '', component: CharactersComponent },
-  { path: '**', component: CharactersComponent }
+  { path: '', redirectTo: 'characters', pathMatch: 'full' },
+  { path: '**', redirectTo: 'characters', pathMatch: 'full' }
 ];
 
 

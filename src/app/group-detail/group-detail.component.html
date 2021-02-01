@@ -6,12 +6,16 @@
     </div>
   </div>
   <div class="details_container">
-    <p>{{group.story}}</p>
+    <img [src]="group.img" alt="X-men comics">
+    <div class="text_wrapper">
+      <h3>{{group.name}}</h3>
+      <p>{{group.story}}</p>
+    </div>
+  </div>
     <div class="members_wrapper">
       <h3> Members </h3>
       <ul>
         <li *ngFor="let member of group.members"> {{member}}</li>
       </ul>
-    </div>
   </div>
 </div>

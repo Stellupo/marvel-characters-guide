@@ -9,11 +9,10 @@
   width: 100%;
   min-height: 450px;
   clip-path: polygon(
-    0 0,
+    0  0,
     100% 0,
     100% 100%,
-    0 calc(100% - 5vw)
-  )
+    0% 81%);
 }
 
 .group_header_text {
@@ -30,6 +29,44 @@
   background: linear-gradient(to left, transparent, rgba(32,32,32,0.7)); /* Linear gradient on each header*/
 }
 
+.details_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 100px;
+  width: 100%;
+}
 
+.details_container img {
+  box-shadow: 5px 5px 10px darkgray;
+  max-width: 400px;
+  flex: 1;
+}
+
+.text_wrapper {
+  flex: 3;
+  font-family: 'robotoregular', Helvetica, serif;
+  max-width: 450px;
+}
+
+h3 {
+  font-family: 'roboto_condensedbold', Helvetica, serif;
+  font-size: 30px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.members_wrapper {
+  width: 100%;
+  color: white;
+  background-color: black;
+  padding: 40px 100px;
+  clip-path: polygon(
+    0 19%,
+    100% 0,
+    100% 100%,
+    0% 100%);
+  text-align: center;
+}
 
 
