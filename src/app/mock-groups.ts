@@ -21,5 +21,5 @@ export const GROUPS: Group[] = [
     story: 'This group of intergalactic outlaws, turned unlikely saviors of the galaxy, are typically without a plan and bicker constantly. But they care deeply about one another and usually get the job done, legal or otherwise.',
     members: ['Rocket', 'Gamora', 'Groot', 'Star-Lord', 'Bug'],
     img: 'assets/images/guardian_of_the_galaxy.jpg',
-    header: 'assets/images/guardian_of_the_galaxy_header.jpg',
+    header: 'assets/images/guardians_of_the_galaxy_header.jpg',
   }];

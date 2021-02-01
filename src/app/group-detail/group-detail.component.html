@@ -1,1 +1,17 @@
-<p>group-detail works!</p>
+<div *ngIf="group" class="details_wrapper">
+  <div class="group_details_header"
+    [ngStyle]="{'background-image': 'url(../' + group.header + ')', 'background-size': 'cover'}">
+    <div class="group_header_text">
+      <h2>{{group.name | uppercase}}</h2>
+    </div>
+  </div>
+  <div class="details_container">
+    <p>{{group.story}}</p>
+    <div class="members_wrapper">
+      <h3> Members </h3>
+      <ul>
+        <li *ngFor="let member of group.members"> {{member}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
