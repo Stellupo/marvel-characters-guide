@@ -11,6 +11,6 @@ export class InMemoryDataService implements InMemoryDbService {
     const characters = CHARACTERS;
     const groups = GROUPS;
 
-    return { characters, groups };
+    return { characters, groups }; // if the data objects are empty, we return an empty initialized one
   }
 }

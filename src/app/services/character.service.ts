@@ -32,12 +32,32 @@ export class CharacterService {
     );
   }
 
+  searchCharacters(character: string): Observable<Character[]> {
+    if (!character.trim()) {
+      // if not search character, return empty hero array.
+      return of([]);
+    }
+    // else return an array of the characters whose names fit the search
+    return this.http.get<Character[]>(`api/characters/?name=${character}`).pipe(
+      tap(x => x.length ?
+        console.log(`found characters matching "${character}"`) :
+        console.log(`no characters matching "${character}"`)),
+      catchError(this.handleError<Character[]>('searchHeroes', []))
+    );
+  }
+
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      console.error(error); // log to console instead
+      console.error(error);
       console.log(`${operation} failed: ${error.message}`);
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
+
+      return of(result as T); // Let the app keep running by returning an empty result.
     };
   }
 
@@ -68,5 +88,7 @@ export class CharacterService {
 
     divs[i].style.backgroundColor = 'rgba(32,32,32,0.8)';
   }
+
+
 
 }

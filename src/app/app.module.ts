@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { GroupsComponent } from './groups/groups.component';
 import {GroupService} from './services/group.service';
 import { GroupDetailComponent } from './group-detail/group-detail.component';
+import { CharaSearchComponent } from './chara-search/chara-search.component';
 
 
 const appRoutes: Routes = [
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     GroupsComponent,
-    GroupDetailComponent
+    GroupDetailComponent,
+    CharaSearchComponent
   ],
   imports: [
     BrowserModule,
