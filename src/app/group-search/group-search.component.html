@@ -5,6 +5,7 @@
          (input)="search(searchBox.value)"
          (blur)="onFocusOut()"/>
   <ul class="search-result" *ngIf="searchBox.value !== ''">
+    <li *ngIf ="(groups$ | async).length == 0">No result found</li>
     <li *ngFor="let group of groups$| async">
       <a routerLink="/groups/{{group.id}}">
         {{group.name | uppercase}}
