@@ -30,6 +30,20 @@ export class GroupService {
     );
   }
 
+  searchGroups(group: string): Observable<Group[]> {
+    if (!group.trim()) {
+      // if not search character, return empty group array.
+      return of ([]);
+    }
+    // else return an array of the characters whose names fit the search
+    return this.httpClient.get<Group[]>(`api/groups/?name=${group}`).pipe(
+      tap(x => x.length ?
+        console.log(`found groups matching "${group}"`) :
+        console.log(`no groups matching "${group}"`)),
+      catchError(this.handleError<Group[]>('searchGroups', []))
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error); // log to console instead
@@ -38,5 +52,4 @@ export class GroupService {
       return of(result as T);
     };
   }
-
 }

@@ -15,6 +15,7 @@ import { GroupsComponent } from './groups/groups.component';
 import {GroupService} from './services/group.service';
 import { GroupDetailComponent } from './group-detail/group-detail.component';
 import { CharaSearchComponent } from './chara-search/chara-search.component';
+import { GroupSearchComponent } from './group-search/group-search.component';
 
 
 const appRoutes: Routes = [
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     FooterComponent,
     GroupsComponent,
     GroupDetailComponent,
-    CharaSearchComponent
+    CharaSearchComponent,
+    GroupSearchComponent
   ],
   imports: [
     BrowserModule,

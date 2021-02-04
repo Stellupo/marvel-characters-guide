@@ -1,0 +1,14 @@
+<div id="search-component">
+  <label for="search-box"></label>
+  <img src="assets/images/search_white.png" alt="search">
+  <input #searchBox id="search-box" placeholder="Search a group"
+         (input)="search(searchBox.value)"
+         (blur)="onFocusOut()"/>
+  <ul class="search-result" *ngIf="searchBox.value !== ''">
+    <li *ngFor="let group of groups$| async">
+      <a routerLink="/groups/{{group.id}}">
+        {{group.name | uppercase}}
+      </a>
+    </li>
+  </ul>
+</div>

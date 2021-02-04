@@ -34,7 +34,7 @@ export class CharacterService {
 
   searchCharacters(character: string): Observable<Character[]> {
     if (!character.trim()) {
-      // if not search character, return empty hero array.
+      // if not search character, return empty array.
       return of([]);
     }
     // else return an array of the characters whose names fit the search
@@ -42,7 +42,7 @@ export class CharacterService {
       tap(x => x.length ?
         console.log(`found characters matching "${character}"`) :
         console.log(`no characters matching "${character}"`)),
-      catchError(this.handleError<Character[]>('searchHeroes', []))
+      catchError(this.handleError<Character[]>('searchCharacters', []))
     );
   }
 
