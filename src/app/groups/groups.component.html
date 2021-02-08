@@ -10,8 +10,8 @@
     <li *ngFor="let group of groups"
         class="card"
         [ngStyle]="{'background-image': 'url(' + group.img + ')','background-size': 'cover'}"
-        (mouseover)="onOver(group)"
-        (mouseout)="onOut(group)">
+        (mouseover)="onOver($event.target)"
+        (mouseout)="onOut($event.target)">
       <a routerLink="/groups/{{group.id}}">
         <div class="txt_wrapper">
           <h3>{{group.name | uppercase}}</h3>

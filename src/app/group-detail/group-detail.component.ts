@@ -1,7 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GroupService} from '../services/group.service';
-import {Group} from '../groups';
+import {Group} from '../models/groups';
 import {ActivatedRoute} from '@angular/router';
+import {Character} from '../models/character';
+import {CharacterService} from '../services/character.service';
 
 @Component({
   selector: 'app-group-detail',
@@ -9,9 +11,10 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./group-detail.component.css']
 })
 export class GroupDetailComponent implements OnInit {
-  @Input() group: Group;
+  group: Group;
 
   constructor(private groupService: GroupService,
+              private characterService: CharacterService,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {

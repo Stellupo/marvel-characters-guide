@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CharacterService} from '../services/character.service';
-import {Character} from '../character';
-import {Router} from '@angular/router';
+import {Character} from '../models/character';
 
 @Component({
   selector: 'app-characters',
@@ -10,8 +9,7 @@ import {Router} from '@angular/router';
 })
 export class CharactersComponent implements OnInit {
 
-  constructor(private characterService: CharacterService,
-              private router: Router) { }
+  constructor(private characterService: CharacterService) { }
 
   characters: Character[];
 
@@ -24,16 +22,13 @@ export class CharactersComponent implements OnInit {
       .subscribe(characters => this.characters = characters);
   }
 
-  onOver(character: Character): void {
+  onOver(character: EventTarget): void {
     this.characterService.Mouseover(character);
   }
 
-  onOut(character: Character): void {
+  onOut(character: EventTarget): void {
     this.characterService.Mouseout(character);
   }
 
-  OnViewCharacter(id: number): void {
-    this.router.navigate(['/characters', id]);
-  }
 
 }

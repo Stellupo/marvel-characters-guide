@@ -1,4 +1,4 @@
-import {Character} from './character';
+import {Character} from './models/character';
 
 
 export const CHARACTERS: Character[] = [
@@ -6,7 +6,7 @@ export const CHARACTERS: Character[] = [
     name: 'WOLVERINE',
     story: 'From the northern wilderness of Canada hails one of the gruffest, most irascible, totally cynical and brooding member of the X-Men ever to grace the team with his presence.',
     abilities: ['Indestructible claws', 'Healing powers', 'Enhanced senses'],
-    group: ['X-MEN'],
+    group: ['X-MEN'], // todo faire en sorte que le groupe se charge automatiquement
     img: 'assets/images/wolverine.jpg',
     header: 'assets/images/wolverine_header.png'
   },
@@ -17,4 +17,12 @@ export const CHARACTERS: Character[] = [
     group: ['Avengers', 'S.H.I.E.L.D'],
     img: 'assets/images/Ironman.jpg',
     header: 'assets/images/ironman_header.png'
+  },
+  { id:3,
+    name: 'GROOT',
+    story: 'This sentient alien tree branches out of his comfort zone to help the Guardians of the Galaxy keep the people of the universe safe.',
+    abilities: ['Regeneration', 'Super strength'],
+    group: ['Guardians of the galaxy'],
+    img: 'assets/images/groot.png',
+    header: 'assets/images/groot_header.png'
   }];

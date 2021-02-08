@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GroupService} from '../services/group.service';
-import {Group} from '../groups';
+import {Group} from '../models/groups';
 import {CharacterService} from '../services/character.service';
 
 @Component({
@@ -24,11 +24,11 @@ export class GroupsComponent implements OnInit {
       .subscribe(groups => this.groups = groups);
   }
 
-  onOut(group: Group): void  {
+  onOut(group: EventTarget ): void  {
     this.characterService.Mouseout(group);
   }
 
-  onOver(group: Group): void {
+  onOver(group: EventTarget): void {
     this.characterService.Mouseover(group);
   }
 }

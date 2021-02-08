@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Character} from '../character';
+import {Character} from '../models/character';
 import {Observable, of} from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import {catchError, map, tap} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
-import {Group} from '../groups';
+import {Group} from '../models/groups';
 
 
 @Injectable({
@@ -29,6 +29,16 @@ export class CharacterService {
     return this.http.get<Character>(url).pipe(
       tap(_ => console.log(`fetched character id=${id}`)),
       catchError(this.handleError<Character>(`getCharacter id=${id}`))
+    );
+  }
+
+  /** GET characters by id. Will 404 if id not found */
+  getCardsFromID(group: Group): Observable<Character[]> {
+    const url = 'api/characters';
+    return this.http.get<Character[]>(url).pipe(
+      map(characters => characters.filter(character => group.members.includes(character.id))),
+      tap(_ => console.log('fetched characters')),
+      catchError(this.handleError<Character[]>('getGroupMembers', [])),
     );
   }
 
@@ -62,33 +72,35 @@ export class CharacterService {
   }
 
   /** changing appearance of the character cards when the mouse is over them */
-  Mouseover(card: Character | Group): void {
-    const divs = document.body.getElementsByClassName('txt_wrapper') as HTMLCollectionOf<HTMLElement>;
-    const i = Number(card.id) - 1;
+  Mouseover(card: EventTarget): void {
+    const div = (card as HTMLElement).closest('div');
+    console.log(div);
+    if (div.className === 'cards_template_container') {return; }
+    console.log('Changing appearance when mouse on');
 
-    const title = divs[i].firstElementChild as HTMLElement;
+    const title = div.firstElementChild as HTMLElement;
     title.style.display = 'none';
 
-    const intro = divs[i].lastElementChild as HTMLElement;
+    const intro = div.lastElementChild as HTMLElement;
     intro.style.display = 'none';
 
-    divs[i].style.backgroundColor = 'rgba(32,32,32,0.2)';
+    div.style.backgroundColor = 'rgba(32,32,32,0.2)';
   }
 
   /** changing appearance of the character cards when the mouse is out */
-  Mouseout(card: Character | Group): void {
-    const divs = document.body.getElementsByClassName('txt_wrapper') as HTMLCollectionOf<HTMLElement>;
-    const i = Number(card.id) - 1;
+  Mouseout(card: EventTarget): void {
+    const div = (card as HTMLElement).closest('div');
+    console.log(div);
+    if (div.className === 'cards_template_container') {return; }
+    console.log('Changing appearance when mouse out');
 
-    const title = divs[i].firstElementChild as HTMLElement;
+    const title = div.firstElementChild as HTMLElement;
     title.style.display = '';
 
-    const intro = divs[i].lastElementChild as HTMLElement;
+    const intro = div.lastElementChild as HTMLElement;
     intro.style.display = '';
 
-    divs[i].style.backgroundColor = 'rgba(32,32,32,0.8)';
+    div.style.backgroundColor = 'rgba(32,32,32,0.8)';
   }
-
-
 
 }

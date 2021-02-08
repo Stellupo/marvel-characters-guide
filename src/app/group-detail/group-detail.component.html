@@ -15,7 +15,8 @@
     <div class="members_wrapper">
       <h3> Members </h3>
       <ul>
-        <li *ngFor="let member of group.members"> {{member}}</li>
+        <app-cards-list [cards] = "group.members"
+                        [group]= "group"></app-cards-list> <!--todo remplacer ici par une méthode pour faire la correspondance entre les strings members et l'affichage des cards -->
       </ul>
   </div>
 </div>

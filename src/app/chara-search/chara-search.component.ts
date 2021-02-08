@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CharacterService} from '../services/character.service';
-import {Character} from '../character';
-import {BehaviorSubject, Observable, ReplaySubject, Subject} from 'rxjs';
+import {Character} from '../models/character';
+import {Observable, ReplaySubject} from 'rxjs';
 
 import {
   debounceTime, distinctUntilChanged, switchMap, tap
@@ -17,8 +17,9 @@ export class CharaSearchComponent implements OnInit {
   constructor(private characterService: CharacterService) { }
 
   characters$: Observable<Character[]>; // no need to subscribe to this observable thanks to the pipe async in the template
-  // tslint:disable-next-line:max-line-length
-  private searchCharacters = new ReplaySubject<string>(1); // we use ReplaySubject here to reload the view of the template everytime there is one letter search
+
+  // we use ReplaySubject here to reload the view of the template everytime there is one letter search
+  private searchCharacters = new ReplaySubject<string>(1);
 
   ngOnInit(): void {
     this.characters$ = this.searchCharacters.pipe(
@@ -38,7 +39,7 @@ export class CharaSearchComponent implements OnInit {
 
   // this function force our subject searchCharacters to contain the search term
   search(term: string): void {
-    console.log(term);
+    console.log('searching for ' + term);
     this.searchCharacters.next(term);
   }
 

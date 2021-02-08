@@ -4,21 +4,4 @@
       <h3>Discover the special abilities of your favorite heroes & villains</h3>
   </div>
 </div>
-<div class="cards_template_container">
-  <app-chara-search></app-chara-search>
-  <ul class="card_template">
-    <li *ngFor="let character of characters"
-        class="card"
-        [ngStyle]="{background: 'url(' + character.img + ')'}"
-        (mouseover)="onOver(character)"
-        (mouseout)="onOut(character)">
-      <a routerLink="/characters/{{character.id}}">
-      <div class="txt_wrapper">
-        <h3>{{character.name}}</h3>
-        <p>{{character.story}}</p>
-      </div>
-      </a>
-    </li>
-  </ul>
-</div>
-
+<app-cards-list [cards] = characters></app-cards-list>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable, ReplaySubject} from 'rxjs';
 import {debounceTime, distinctUntilChanged, switchMap, tap} from 'rxjs/operators';
-import {Group} from '../groups';
+import {Group} from '../models/groups';
 import {GroupService} from '../services/group.service';
 
 @Component({
