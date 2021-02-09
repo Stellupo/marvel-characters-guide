@@ -17,7 +17,6 @@ export class CharaSearchComponent implements OnInit {
   constructor(private characterService: CharacterService) { }
 
   characters$: Observable<Character[]>; // no need to subscribe to this observable thanks to the pipe async in the template
-
   // we use ReplaySubject here to reload the view of the template everytime there is one letter search
   private searchCharacters = new ReplaySubject<string>(1);
 

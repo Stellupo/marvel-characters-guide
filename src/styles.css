@@ -136,6 +136,7 @@ html,body {
   flex-direction: column;
   justify-content: space-between;
   background-color: rgba(32,32,32,0.8);
+  text-align: left;
 }
 
 .card {
