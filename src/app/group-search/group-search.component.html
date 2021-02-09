@@ -1,9 +1,9 @@
 <div id="search-component">
   <label for="search-box"></label>
-  <img src="assets/images/search_white.png" alt="search">
+  <img src="../../assets/images/Icons/search_white.png" alt="search">
   <input #searchBox id="search-box" placeholder="Search a group"
          (input)="search(searchBox.value)"
-         (blur)="onFocusOut()"/>
+         (focusout)="onFocusOut()"/>
   <ul class="search-result" *ngIf="searchBox.value !== ''">
     <li *ngIf ="(groups$ | async).length == 0">No result found</li>
     <li *ngFor="let group of groups$| async">

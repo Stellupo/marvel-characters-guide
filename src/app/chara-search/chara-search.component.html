@@ -1,9 +1,9 @@
 <div id="search-component">
   <label for="search-box"></label>
-  <img src="assets/images/search_white.png" alt="search">
+  <img src="../../assets/images/Icons/search_white.png" alt="search">
   <input #searchBox id="search-box" placeholder="Search a character"
          (input)="search(searchBox.value)"
-         (blur)="onFocusOut()"/>
+         (focusout)="onFocusOut()"/>
   <ul class="search-result" *ngIf="searchBox.value !== ''"  tabindex="-1">
       <li *ngIf ="(characters$ | async).length == 0">No result found</li>
       <li *ngFor="let character of characters$ | async">

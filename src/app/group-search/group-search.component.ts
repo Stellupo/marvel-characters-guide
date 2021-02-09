@@ -14,7 +14,8 @@ export class GroupSearchComponent implements OnInit {
   constructor(private groupService: GroupService) { }
 
   groups$: Observable<Group[]>; // no need to subscribe to this observable thanks to the pipe async in the template
-  private searchGroups = new ReplaySubject<string>(1); // we use ReplaySubject here to reload the view of the template everytime there is one letter search
+  // we use ReplaySubject here to reload the view of the template everytime there is one letter search
+  private searchGroups = new ReplaySubject<string>(1);
 
   ngOnInit(): void {
     this.groups$ = this.searchGroups.pipe(

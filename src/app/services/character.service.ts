@@ -16,7 +16,7 @@ export class CharacterService {
 
   /** GET characters from the server */
   getCharacters(): Observable<Character[]> {
-    return this.http.get<Character[]>('api/characters')
+    return this.http.get<Character[]>('http://127.0.0.1:8000/api/characters')
       .pipe(
         tap(_ => console.log('characters ok')),
         catchError(this.handleError<Character[]>('getCharacters', [])),
@@ -25,7 +25,7 @@ export class CharacterService {
 
   /** GET character by id. Will 404 if id not found */
   getCharacter(id: number): Observable<Character> {
-    const url = 'api/characters' + `/${id}`;
+    const url = 'http://127.0.0.1:8000/api/characters' + `/${id}`;
     return this.http.get<Character>(url).pipe(
       tap(_ => console.log(`fetched character id=${id}`)),
       catchError(this.handleError<Character>(`getCharacter id=${id}`))
@@ -34,7 +34,7 @@ export class CharacterService {
 
   /** GET characters by id. Will 404 if id not found */
   getCardsFromID(group: Group): Observable<Character[]> {
-    const url = 'api/characters';
+    const url = ('http://127.0.0.1:8000/api/characters');
     return this.http.get<Character[]>(url).pipe(
       map(characters => characters.filter(character => group.members.includes(character.id))),
       tap(_ => console.log('fetched characters')),
@@ -48,7 +48,7 @@ export class CharacterService {
       return of([]);
     }
     // else return an array of the characters whose names fit the search
-    return this.http.get<Character[]>(`api/characters/?name=${character}`).pipe(
+    return this.http.get<Character[]>('http://127.0.0.1:8000/api/characters?name' + `=${character}`).pipe(
       tap(x => x.length ?
         console.log(`found characters matching "${character}"`) :
         console.log(`no characters matching "${character}"`)),
@@ -71,11 +71,12 @@ export class CharacterService {
     };
   }
 
-  /** changing appearance of the character cards when the mouse is over them */
+  /** changing appearance of the cards when the mouse is over them */
   Mouseover(card: EventTarget): void {
-    const div = (card as HTMLElement).closest('div');
-    console.log(div);
-    if (div.className === 'cards_template_container') {return; }
+    const li = (card as HTMLElement).parentElement;
+    const div = li.firstElementChild as HTMLElement;
+
+    if (div.className !== 'txt_wrapper') {return; }
     console.log('Changing appearance when mouse on');
 
     const title = div.firstElementChild as HTMLElement;
@@ -87,11 +88,12 @@ export class CharacterService {
     div.style.backgroundColor = 'rgba(32,32,32,0.2)';
   }
 
-  /** changing appearance of the character cards when the mouse is out */
+  /** changing appearance of the cards when the mouse is out */
   Mouseout(card: EventTarget): void {
-    const div = (card as HTMLElement).closest('div');
-    console.log(div);
-    if (div.className === 'cards_template_container') {return; }
+    const li = (card as HTMLElement).parentElement;
+    const div = li.firstElementChild as HTMLElement;
+
+    if (div.className !== 'txt_wrapper') {return; }
     console.log('Changing appearance when mouse out');
 
     const title = div.firstElementChild as HTMLElement;

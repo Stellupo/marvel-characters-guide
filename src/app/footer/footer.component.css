@@ -18,7 +18,6 @@ footer img {
 footer p {
   font-family: 'robotoregular', Helvetica, serif;
   font-size: 80%;
-  overflow: scroll;
   color: darkgray;
   text-align: justify;
 }

@@ -1,17 +1,14 @@
-<div class="cards_template_container">
-  <app-chara-search></app-chara-search>
-  <ul class="card_template">
-    <li *ngFor="let card of cards"
-        class="card"
-        [ngStyle]="{background: 'url(' + card.img + ')'}"
-        (mouseover)="onOver($event.target)"
-        (mouseout)="onOut($event.target)">
-      <a routerLink="/characters/{{card.id}}">
-        <div class="txt_wrapper">
-          <h3>{{card.name}}</h3>
-          <p>{{card.story}}</p>
-        </div>
-      </a>
-    </li>
-  </ul>
-</div>
+<ul class="card_template">
+  <li *ngFor="let card of cards"
+      class="card"
+      [ngStyle]="{background: 'url(' + card.img + ')'}"
+      (mouseover)="onOver($event.target)"
+      (mouseout)="onOut($event.target)">
+    <a routerLink="/characters/{{card.id}}">
+      <div class="txt_wrapper">
+        <h3>{{card.name}}</h3>
+        <p>{{card.story}}</p>
+      </div>
+    </a>
+  </li>
+</ul>

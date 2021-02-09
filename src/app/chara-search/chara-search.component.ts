@@ -45,19 +45,17 @@ export class CharaSearchComponent implements OnInit {
 
   onFocusOut(): void {
     // if we don't click on one of the result in the list, the search bar is initialized
-      document.addEventListener('click', (event) => {
-        console.log('results list loose focus', event.target);
-        // if we click on a link from the results list
-        if ((event.target as HTMLElement).closest('ul')) {
-          return;
-        } // if we click on the input bar
-        else if ((event.target as HTMLElement).id === 'search-box') {
-          (event.target as HTMLInputElement).focus();
-          return;
-        } // if we click anywhere else, initialize the search bar
-        (document.getElementById('search-box') as HTMLInputElement).value = '';
-      });
+    document.addEventListener('click', (event) => {
+      console.log('results list loose focus', event.target);
+      // if we click on a link from the results list
+      if ((event.target as HTMLElement).closest('ul')) {
+        return;
+      } // if we click on the input bar
+      else if ((event.target as HTMLElement).id === 'search-box') {
+        (event.target as HTMLInputElement).focus();
+        return;
+      } // if we click anywhere else, initialize the search bar
+      (document.getElementById('search-box') as HTMLInputElement).value = '';
+    });
   }
-
-
 }

@@ -23,14 +23,13 @@ export class CardsListComponent implements OnInit {
   // we can receive from the parent file 2 types of card : an array of objects Characters or of id numbers.
   // if we receive an array of id, we need to convert it into an array of objects Characters
   getCardsFromID(): any {
-    const group: Group = this.group;
     // if we receive cards as Character[], we don't need to convert ids into characters
-    if (group === undefined) {
+    if (this.group === undefined) {
       return;
     }
     console.log('searching for group members ');
-    this.characterService.getCardsFromID(group)
-      .subscribe(character => this.cards = character);
+    this.characterService.getCardsFromID(this.group)
+      .subscribe(characters => this.cards = characters);
   }
 
   onOver(character: EventTarget): void {
