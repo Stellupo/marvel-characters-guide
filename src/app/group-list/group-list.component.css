@@ -1,0 +1,26 @@
+h3 {
+  font-size: 50px;
+  text-transform: uppercase;
+  padding: 5px;
+  letter-spacing: -3px;
+  height: 65px;
+  margin: 0;
+}
+
+
+ul {
+  list-style: none;
+  font-family: 'robotoregular', Helvetica, serif;
+  font-size: 20px;
+  padding: 0;
+}
+
+li {
+  text-align: center;
+}
+
+li:hover {
+  cursor: pointer;
+  font-weight: bolder;
+}
+

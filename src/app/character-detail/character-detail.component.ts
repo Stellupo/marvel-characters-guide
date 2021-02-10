@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CharacterService} from '../services/character.service';
 import {ActivatedRoute} from '@angular/router';
 import {Character} from '../models/character';
@@ -18,6 +18,7 @@ export class CharacterDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCharacter();
+
   }
 
   getCharacter(): void {

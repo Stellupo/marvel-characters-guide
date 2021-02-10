@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Group} from '../models/groups';
 import {Observable, of} from 'rxjs';
-import {catchError, tap} from 'rxjs/operators';
+import {catchError, map, tap} from 'rxjs/operators';
+import {Character} from '../models/character';
 
 
 @Injectable({
@@ -26,6 +27,17 @@ export class GroupService {
     return this.httpClient.get<Group>(url).pipe(
       tap(_ => console.log(`fetched groups id=${id}`)),
       catchError(this.handleError<Group>(`getGroups id=${id}`))
+    );
+  }
+
+  /** GET groups from ids. Will 404 if id not found */
+  getGroupsFromID(character: Character): Observable<Group[]> {
+    const url = ('http://127.0.0.1:8000/api/groups');
+    return this.httpClient.get<Group[]>(url).pipe(
+      // filter to return only the characters whose ids is in the group
+      map(groups => groups.filter(group => group.members.includes(character.id))),
+      tap(_ => console.log('fetched groups')),
+      catchError(this.handleError<Group[]>('getGroupsFromId', [])),
     );
   }
 

@@ -15,6 +15,7 @@ import { GroupDetailComponent } from './group-detail/group-detail.component';
 import { CharaSearchComponent } from './chara-search/chara-search.component';
 import { GroupSearchComponent } from './group-search/group-search.component';
 import { CardsListComponent } from './cards-list/cards-list.component';
+import { GroupListComponent } from './group-list/group-list.component';
 
 
 const appRoutes: Routes = [
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     GroupDetailComponent,
     CharaSearchComponent,
     GroupSearchComponent,
-    CardsListComponent
+    CardsListComponent,
+    GroupListComponent
   ],
   imports: [
     BrowserModule,

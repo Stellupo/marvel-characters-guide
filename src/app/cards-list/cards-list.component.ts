@@ -27,7 +27,7 @@ export class CardsListComponent implements OnInit {
     if (this.group === undefined) {
       return;
     }
-    console.log('searching for group members ');
+    console.log('searching for group names ');
     this.characterService.getCardsFromID(this.group)
       .subscribe(characters => this.cards = characters);
   }

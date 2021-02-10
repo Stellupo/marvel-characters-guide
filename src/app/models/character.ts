@@ -3,7 +3,7 @@ export class Character{
   id: number;
   story: string;
   abilities: string[];
-  group?: string[];
+  groups?: number[];
   img: string;
   header: string;
 }

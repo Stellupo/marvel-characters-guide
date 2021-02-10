@@ -1,7 +1,7 @@
 <div *ngIf="character" class="details_wrapper">
   <div class="chara_details_header">
     <div class="chara_header_img">
-      <img [src]= character.header alt="header">
+      <img [src]=character.header alt="header">
     </div>
     <div class="chara_header_text">
       <h2>{{character.name | uppercase}}</h2>
@@ -15,11 +15,8 @@
         <li *ngFor="let ability of character.abilities"> {{ability}}</li>
       </ul>
     </div>
-    <div class="group_wrapper" *ngIf="character.group">
-      <h3> Groups </h3>
-      <ul>
-        <li *ngFor="let group of character.group"> {{group}}</li>
-      </ul>
+    <div class="group_wrapper" *ngIf="character.groups">
+      <app-group-list [character] = this.character></app-group-list>
     </div>
   </div>
 </div>

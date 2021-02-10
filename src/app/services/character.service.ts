@@ -32,10 +32,11 @@ export class CharacterService {
     );
   }
 
-  /** GET characters by id. Will 404 if id not found */
+  /** GET characters cards from ids. Will 404 if id not found */
   getCardsFromID(group: Group): Observable<Character[]> {
     const url = ('http://127.0.0.1:8000/api/characters');
     return this.http.get<Character[]>(url).pipe(
+      // filter to return only the characters whose ids is in the group
       map(characters => characters.filter(character => group.members.includes(character.id))),
       tap(_ => console.log('fetched characters')),
       catchError(this.handleError<Character[]>('getGroupMembers', [])),
