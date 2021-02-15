@@ -13,6 +13,7 @@ import {CharacterService} from '../services/character.service';
 export class GroupDetailComponent implements OnInit {
   group: Group;
 
+
   constructor(private groupService: GroupService,
               private characterService: CharacterService,
               private route: ActivatedRoute) { }
@@ -26,5 +27,7 @@ export class GroupDetailComponent implements OnInit {
     this.groupService.getGroup(id)
       .subscribe(group => this.group = group);
   }
+
+
 
 }

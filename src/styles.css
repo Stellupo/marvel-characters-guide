@@ -108,16 +108,18 @@ html,body {
 
 
 /*List of the characters cards*/
-.cards_template_container {
+.cards_template_container ul{
   padding-left: 40px;
+  padding-right: 40px;
 }
 
 
 .card_template {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  padding: 0;
   flex-wrap: wrap;
-  padding: 0px;
 }
 
 .card_template li {
@@ -140,7 +142,10 @@ html,body {
 }
 
 .card {
-  width: 200px;
+  flex-grow: 1; /* force the cards to have the same size */
+  flex-shrink: 0; /* forbid flexbox to reduce the cards if they don't fit the size of the container */
+  flex-basis: 200px; /* minimum size of the cards */
+  max-width: 200px;
   height: 300px;
   border: 2px solid #fff;
   margin: 20px;
@@ -186,10 +191,41 @@ html,body {
   margin: 2px;
 }
 
-/* Details page */
+/* Members carousel */
+.arrow {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  display: block;
+  border: none;
+  margin: 20px;
+}
 
+#back_arrow {
+  background: url("/assets/images/Icons/back_arrow_icon.png") no-repeat left;
+  background-size: contain;
+  /*position: absolute;*/
+  right: 7px;
+}
 
+#next_arrow {
+  background: url("/assets/images/Icons/next_arrow_icon.png") no-repeat right;
+  background-size: contain;
+  /*position: absolute;*/
+  left: 7px;
+}
 
+.arrow:focus {
+  outline: none;
+}
 
+.arrow:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+#search-component {
+  padding-left: 20px;
+}
 
 

@@ -1,3 +1,4 @@
+/* Overall page */
 .details_wrapper {
   background-color: white;
   color: black;
@@ -5,6 +6,7 @@
   flex-direction: column;
 }
 
+/* Header */
 .group_details_header {
   width: 100%;
   min-height: 450px;
@@ -29,6 +31,7 @@
   background: linear-gradient(to left, transparent, rgba(32,32,32,0.7)); /* Linear gradient on each header*/
 }
 
+/* Overall content */
 .details_container {
   display: flex;
   justify-content: space-around;
@@ -37,6 +40,7 @@
   width: 100%;
 }
 
+/* Group description */
 .details_container img {
   box-shadow: 5px 5px 10px darkgray;
   max-width: 400px;
@@ -56,11 +60,12 @@ h3 {
   text-transform: uppercase;
 }
 
+/* Group members */
 .members_wrapper {
   width: 100%;
   color: white;
   background-color: black;
-  padding: 40px 100px;
+  padding: 100px;
   clip-path: polygon(
     0 19%,
     100% 0,
@@ -69,11 +74,46 @@ h3 {
   text-align: center;
 }
 
-.members_wrapper ul {
-  height: auto;
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
+.members_carousel {
+  max-height : 500px;
+  transition: margin-left 250ms;
+  margin: 2px;
 }
 
+.cards_template_carousel {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
 
+.gallery {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scroll-snap-type: x proximity;
+  position : relative;
+  margin: 6px;
+}
+
+/* Scroll bar */
+
+
+::-webkit-scrollbar-track {
+  background-color: #3d4852;
+}
+
+::-webkit-scrollbar {
+  height: 2px;
+  background-color: #3d4852;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 3px;
+}

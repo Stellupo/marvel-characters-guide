@@ -14,9 +14,10 @@
   </div>
     <div class="members_wrapper">
       <h3> Members </h3>
-      <ul>
-        <app-cards-list [cards] = "group.members"
-                        [group]= "group"></app-cards-list>
-      </ul>
+        <ul class="members_carousel">
+          <app-cards-list  [ngClass]="{'card_template' : true, 'gallery' : group.members.length > 4 }"
+                           [cards] = "group.members"
+                           [group]= "group"></app-cards-list>
+        </ul>
   </div>
 </div>
