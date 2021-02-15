@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {GroupService} from '../services/group.service';
 import {Group} from '../models/groups';
 import {CharacterService} from '../services/character.service';
+import {Mouseout} from '../models/cards-functions';
+import {Mouseover} from '../models/cards-functions';
 
 @Component({
   selector: 'app-groups',
@@ -25,10 +27,10 @@ export class GroupsComponent implements OnInit {
   }
 
   onOut(group: EventTarget ): void  {
-    this.characterService.Mouseout(group);
+    Mouseout(group);
   }
 
   onOver(group: EventTarget): void {
-    this.characterService.Mouseover(group);
+    Mouseover(group);
   }
 }

@@ -191,39 +191,7 @@ html,body {
   margin: 2px;
 }
 
-/* Members carousel */
-.arrow {
-  height: 50px;
-  width: 50px;
-  padding: 0;
-  display: block;
-  border: none;
-  margin: 20px;
-}
-
-#back_arrow {
-  background: url("/assets/images/Icons/back_arrow_icon.png") no-repeat left;
-  background-size: contain;
-  /*position: absolute;*/
-  right: 7px;
-}
-
-#next_arrow {
-  background: url("/assets/images/Icons/next_arrow_icon.png") no-repeat right;
-  background-size: contain;
-  /*position: absolute;*/
-  left: 7px;
-}
-
-.arrow:focus {
-  outline: none;
-}
-
-.arrow:hover {
-  background: #ccc;
-  cursor: pointer;
-}
-
+/* Search bar */
 #search-component {
   padding-left: 20px;
 }

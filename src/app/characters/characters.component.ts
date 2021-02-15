@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CharacterService} from '../services/character.service';
 import {Character} from '../models/character';
+import {Mouseout, Mouseover} from '../models/cards-functions';
 
 @Component({
   selector: 'app-characters',
@@ -23,11 +24,11 @@ export class CharactersComponent implements OnInit {
   }
 
   onOver(character: EventTarget): void {
-    this.characterService.Mouseover(character);
+    Mouseover(character);
   }
 
   onOut(character: EventTarget): void {
-    this.characterService.Mouseout(character);
+    Mouseout(character);
   }
 
 
