@@ -17,7 +17,8 @@
         <ul class="members_carousel">
           <app-cards-list  [ngClass]="{'card_template' : true, 'gallery' : group.members.length > 4 }"
                            [cards] = "group.members"
-                           [group]= "group"></app-cards-list>
+                           [group]= "group"
+                           [link]="'/characters/'"></app-cards-list>
         </ul>
   </div>
 </div>

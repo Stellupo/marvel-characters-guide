@@ -6,17 +6,9 @@
 </div>
 <div class="cards_template_container">
   <app-group-search class="search_container"></app-group-search>
-  <ul class="card_template">
-    <li *ngFor="let group of groups"
-        class="card"
-        [ngStyle]="{'background-image': 'url(' + group.img + ')','background-size': 'cover'}"
-        (mouseover)="onOver($event.target)"
-        (mouseout)="onOut($event.target)">
-      <a routerLink="/groups/{{group.id}}">
-        <div class="txt_wrapper">
-          <h3>{{group.name | uppercase}}</h3>
-        </div>
-      </a>
-    </li>
+  <ul>
+    <app-cards-list class= "card_template"
+                    [cards] = groups
+                    [link] = "'/groups/'"></app-cards-list>
   </ul>
 </div>

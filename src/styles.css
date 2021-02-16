@@ -63,10 +63,14 @@ html,body {
 }
 
 /*Nav bar*/
-.nav { /*todo faire en sorte que la barre reste au même endroit même quand on réduit l'écran car actuellement absolute selon la page entière*/
+.header{
+  position: relative;
+}
+
+.nav {
   position: absolute;
-  top: 92px;
-  left: 200px;
+  top: 130px;
+  left: 20px;
 }
 
 
@@ -79,6 +83,7 @@ html,body {
 
 /*Header of the pages*/
 .page_header {
+  position: relative;
   width: 100%;
   height: 350px;
 }
@@ -108,11 +113,6 @@ html,body {
 
 
 /*List of the characters cards*/
-.cards_template_container ul{
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
 
 .card_template {
   display: flex;
@@ -195,5 +195,92 @@ html,body {
 #search-component {
   padding-left: 20px;
 }
+
+/* Search bar container */
+#search-component img {
+  width: 25px;
+  float: left;
+  margin-top: 15px;
+}
+
+/* Input */
+#search-box {
+  width: 300px;
+  height: 30px;
+  text-transform: uppercase;
+  color: darkgray;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  margin: 10px;
+  position: relative;
+}
+
+#search-box:focus {
+  outline: none;
+  border-bottom: 1px solid red;
+}
+
+
+/* List of result */
+.search-result {
+  width: 350px;
+  border: none;
+  font-family: 'robotoregular', Helvetica, serif;
+  font-size: 90%;
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+
+.search-result li {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  background-color: transparent;
+  color: #888;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.search-result li:first-child {
+  border-top: 1px solid white;
+}
+
+.search-result li:last-child {
+  border-bottom: 1px solid white;
+}
+
+.search-result li:hover {
+  background-color: #607D8B;
+}
+
+.search-result li a {
+  color: #888;
+  display: block;
+  text-decoration: none;
+}
+
+.search-result li a:hover {
+  color: white;
+}
+.search-result li a:active {
+  color: white;
+}
+
+/*Styles for mobile or tablet */
+
+@media all and (max-width: 1024px) {
+
+
+
+}
+
+
+
+
+
 
 

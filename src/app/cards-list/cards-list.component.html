@@ -1,12 +1,12 @@
 <li *ngFor="let card of cards"
     class="card"
-    [ngStyle]="{background: 'url(' + card.img + ')'}"
+    [ngStyle]="{'background-image': 'url(' + card.img + ')','background-size': 'cover'}"
     (mouseover)="onOver($event.target)"
     (mouseout)="onOut($event.target)">
-  <a routerLink="/characters/{{card.id}}">
+  <a [routerLink]= "link + card.id">
     <div class="txt_wrapper">
-      <h3>{{card.name}}</h3>
-      <p>{{card.story}}</p>
+      <h3>{{card.name | uppercase}}</h3>
+      <p *ngIf="link.includes('characters')">{{card.story}}</p>
     </div>
   </a>
 </li>
