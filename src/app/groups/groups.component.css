@@ -3,5 +3,10 @@
   background: url("../../assets/images/Groups/group_header.jpg") bottom;
 }
 
-
+@media all and (max-width: 1024px) {
+  .page_header {
+    background: url("../../assets/images/Groups/group_header.jpg") right top;
+    background-size: cover;
+  }
+}
 

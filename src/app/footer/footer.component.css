@@ -52,3 +52,35 @@ footer div{
 h2 {
   margin-top: 20px;
 }
+
+@media all and (max-width: 1024px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    padding: 5px;
+    background-color: black;
+    width: 100%;
+  }
+
+  footer img {
+    height: 70px;
+    margin-top: 20px;
+  }
+
+  .follow_us {
+    min-height: auto;
+  }
+
+  .icon_wrapper img {
+    height: 20px;
+  }
+
+  h2 {
+    margin: 5px 0;
+  }
+
+}

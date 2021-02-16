@@ -2,3 +2,9 @@
 .page_header {
   background: url("../../assets/images/Characters/characters.jpg") bottom;
 }
+
+@media all and (max-width: 1024px) {
+  .page_header {
+    background-size: cover;
+  }
+}

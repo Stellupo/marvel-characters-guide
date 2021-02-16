@@ -85,3 +85,37 @@ h1{
   right: 0;
   z-index: 40;
 }
+
+
+@media all and (max-width: 1024px) {
+  /*Logo & title*/
+  .logo{
+    margin: 15px 0;
+  }
+
+  .logo img{
+    height: 50px;
+    margin: 2px;
+  }
+
+  h1{
+    font-size: 20px;
+  }
+  /*Nav bar*/
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav a {
+    font-size: 12px;
+  }
+
+  .nav a:active{
+    font-size: 11px;
+  }
+}
