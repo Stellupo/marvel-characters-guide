@@ -24,3 +24,13 @@ li:hover {
   font-weight: bolder;
 }
 
+@media all and (max-width: 1024px) {
+  h3 {
+    font-size: 40px;
+  }
+
+  ul {
+    font-size: 15px;
+  }
+}
+
