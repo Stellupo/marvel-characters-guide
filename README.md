@@ -1,5 +1,12 @@
 # MarvelCharactersGuide
 
+## presentation
+Marvel Characters Guide : provide information about your favorite heroes and the heroes alliances. 
+
+## init the project
+Download the back-end environment [Here](https://github.com/Stellupo/marvel-api) and please follow the instructions from its README file before launching the website.
+
+## functionalities
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
 ## Development server
