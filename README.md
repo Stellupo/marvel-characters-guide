@@ -1,13 +1,18 @@
 # MarvelCharactersGuide
 
-## presentation
+## Presentation
 Marvel Characters Guide : provide information about your favorite heroes and the heroes alliances. 
+Fully responsive app with autocomplete search Bar, carousel display, communicating with an API (Python/FastAPI/SQLite). 
 
-## init the project
+<img width="300" alt="image" src="https://github.com/Stellupo/marvel-characters-guide/assets/67515802/ad4010b3-a1ac-4c61-a5eb-88fa7a124b82">
+<img width="300" alt="image" src="https://github.com/Stellupo/marvel-characters-guide/assets/67515802/46e16272-99f6-4c80-b660-80d991c814f3">
+<img width="300" alt="image" src="https://github.com/Stellupo/marvel-characters-guide/assets/67515802/e32a0366-427c-4c17-a92e-a3265e3c7f3e">
+<img width="300" alt="image" src="https://github.com/Stellupo/marvel-characters-guide/assets/67515802/80e54aac-8265-4781-b54e-a9b62833524d">
+<img width="100" alt="image" src="https://github.com/Stellupo/marvel-characters-guide/assets/67515802/4501deb1-0bf9-46e9-b74c-0cda7aa2a416">
+
+## Init the project
+
 Download the back-end environment [Here](https://github.com/Stellupo/marvel-api) and please follow the instructions from its README file before launching the website.
-
-## functionalities
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
 ## Development server
 
